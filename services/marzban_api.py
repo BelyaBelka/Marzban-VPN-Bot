@@ -1,4 +1,5 @@
-from config import MARZBAN_USER, MARZBAN_PASS, MARZBAN_API_URL, SSH_USERNAME, SSH_HOST, SSH_PASSWORD, token_pay
+import os
+from config import MARZBAN_USER, MARZBAN_PASS, MARZBAN_API_URL, SSH_USERNAME, SSH_HOST, SSH_PASSWORD, token_pay, ym_receiver
 from marzban import MarzbanAPI, UserTemplateCreate, UserCreate, ProxySettings, UserModify
 from db import save_user_link, remove_user_link, get_vpn_username, get_all_user_links
 from datetime import datetime, timedelta
@@ -317,7 +318,7 @@ async def generate_payment_link(username: str, user_id: int) -> tuple[str, str]:
     ACTIVE_PAYMENTS[user_id] = label
 
     quickpay = Quickpay(
-        receiver="4100119130087412",
+        receiver=ym_receiver,
         quickpay_form="shop",
         targets="Sponsor this project",
         paymentType="SB",
