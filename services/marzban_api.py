@@ -332,7 +332,7 @@ async def check_payment_and_extend(username: str, label: str, user_id: int) -> s
     client = Client(token_pay)
 
     try:
-        for _ in range(60):
+        for _ in range(90):
             history = client.operation_history(label=label)
             for op in history.operations:
                 if op.label == label and op.status == "success":

@@ -12,4 +12,4 @@ async def start_handler(message: Message):
     if is_admin:
         await message.reply("Вы являетесь администратором. Введите /start_admin для списка команд.")
     else:
-        await message.reply("Команды пользователя:\n/reg <username> - Зарегистрироваться\n/status <username> - Проверить статус\n/pay <username> - Оплатить подписку\n/start - Список команд.")
+        await message.reply("Команды пользователя:\n/reg <username> - Зарегистрироваться\n/status <username> - Проверить статус\n/pay <username> - Оплатить подписку(Ссылка будет доступна в течение 15 минут!)\n/start - Список команд.")

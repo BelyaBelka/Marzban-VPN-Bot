@@ -22,8 +22,8 @@ initialize_db()
 
 
 dp.include_router(common_router)
-dp.include_router(admin_router)
 dp.include_router(user_router)
+dp.include_router(admin_router)
 
 async def main():
     # Удаление предыдущих обработчиков

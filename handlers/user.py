@@ -8,10 +8,6 @@ from services.marzban_api import get_marzban_token, create_user_user, status_use
 router = Router()
 
 
-@router.message(Command('start'))
-async def start_user(message: Message):
-    await message.reply(f"Команды пользователя:\n/reg <username> - зарегестрироваться\n/status <username> - проверить статус подписки\n/pay <username> - оплата подписки(ССЫЛКА ДОСТУПНА В ТЕЧЕНИЕ 10 МИНУТ!)\n/start - список доступных команд")
-
 
 @router.message(Command('reg'))
 async def register(message: Message, **data):
